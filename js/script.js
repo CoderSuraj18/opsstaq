@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "(prefers-reduced-motion: reduce)"
         ).matches;
 
+
     if (
         cursorGlow &&
         finePointer &&
@@ -100,12 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
     /*
      * ==================================================
      * 03. SCROLL REVEAL
+     *
+     * FIX:
+     * Added .hero-content and .section-heading.
+     *
+     * These elements already have the "reveal" class
+     * in index.html, but the old JavaScript was not
+     * observing them.
      * ==================================================
      */
 
     const revealElements =
         document.querySelectorAll(
             [
+                ".hero-content",
+                ".section-heading",
                 ".about-card",
                 ".service-card",
                 ".project-card",
@@ -116,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ".resume-card",
                 ".owner-profile-card",
                 ".pipeline-step",
-                ".pipeline-result"
+                ".pipeline-result",
+                ".stat-card"
             ].join(", ")
         );
 
@@ -155,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 entry.target.classList.add(
                                     "is-visible"
                                 );
+
 
                                 observerInstance.unobserve(
                                     entry.target
@@ -229,10 +241,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
 
 
-                    const target =
-                        document.querySelector(
-                            targetId
-                        );
+                    let target = null;
+
+                    try {
+
+                        target =
+                            document.querySelector(
+                                targetId
+                            );
+
+                    } catch (error) {
+
+                        return;
+                    }
 
 
                     if (!target) {
@@ -255,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     /*
                      * Update the browser URL
-                     * without jumping again.
+                     * without causing another jump.
                      */
 
                     if (
@@ -327,20 +348,17 @@ document.addEventListener("DOMContentLoaded", () => {
     /*
      * ==================================================
      * 06. SUGGESTION FORM
+     *
+     * Front-end only.
+     * No data is sent or stored.
      * ==================================================
-     *
-     * This is currently a front-end form.
-     *
-     * It does NOT send or store information.
-     *
-     * We intentionally do not pretend that a
-     * suggestion was delivered to OPSSTAQ.
      */
 
     const suggestionForm =
         document.querySelector(
             "#suggestionForm"
         );
+
 
     const formStatus =
         document.querySelector(
@@ -372,6 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 formStatus.textContent =
                     "Thanks — your suggestion is ready to be connected to a submission service.";
+
 
                 formStatus.style.color =
                     "#7ee2a8";
@@ -491,16 +510,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 const rect =
                     ownerCard.getBoundingClientRect();
 
+
                 const x =
                     event.clientX -
                     rect.left;
+
 
                 const y =
                     event.clientY -
                     rect.top;
 
+
                 const rotateX =
                     ((y / rect.height) - 0.5) * -2;
+
 
                 const rotateY =
                     ((x / rect.width) - 0.5) * 2;
@@ -511,6 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
                      perspective(900px)
                      rotateX(${rotateX}deg)
                      rotateY(${rotateY}deg)`;
+
             }
         );
 
