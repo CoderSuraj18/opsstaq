@@ -23,6 +23,25 @@
 
 <body>
 
+
+    <!-- ==================================================
+         WELCOME MESSAGE
+    =================================================== -->
+
+    <div
+        id="welcomeMessage"
+        class="welcome-message"
+        role="status"
+        aria-live="polite"
+    >
+        <span class="welcome-label">WELCOME TO OPSSTAQ</span>
+
+        <p>
+            DevOps • Cloud • Automation
+        </p>
+    </div>
+
+
     <!-- Ambient cursor glow -->
     <div
         class="cursor-glow"
@@ -921,117 +940,7 @@
 
 
         <!-- ==================================================
-             SUGGESTIONS / FEEDBACK
-        =================================================== -->
-
-        <section
-            id="suggestions"
-            class="section"
-        >
-
-            <div class="container">
-
-                <article class="suggestion-card reveal">
-
-                    <div class="suggestion-content">
-
-                        <span class="section-label">
-                            06 / FEEDBACK
-                        </span>
-
-
-                        <h2>
-                            Have an idea
-                            <span>for OPSSTAQ?</span>
-                        </h2>
-
-
-                        <p>
-                            Have an idea, noticed something, or want to
-                            see something added? Drop a quick suggestion —
-                            your feedback helps shape OPSSTAQ.
-                        </p>
-
-                    </div>
-
-
-                    <form
-                        id="suggestionForm"
-                        class="suggestion-form"
-                    >
-
-                        <div class="form-row">
-
-                            <label>
-                                Name
-
-                                <input
-                                    type="text"
-                                    name="name"
-                                    required
-                                    autocomplete="name"
-                                    placeholder="Your name"
-                                >
-                            </label>
-
-
-                            <label>
-                                Email
-
-                                <input
-                                    type="email"
-                                    name="email"
-                                    required
-                                    autocomplete="email"
-                                    placeholder="you@example.com"
-                                >
-                            </label>
-
-                        </div>
-
-
-                        <label>
-                            Suggestion
-
-                            <textarea
-                                name="suggestion"
-                                rows="5"
-                                required
-                                placeholder="Tell us what you'd like to see..."
-                            ></textarea>
-                        </label>
-
-
-                        <div class="form-actions">
-
-                            <button
-                                type="submit"
-                                class="suggestion-submit"
-                            >
-                                Submit Suggestion →
-                            </button>
-
-
-                            <span
-                                id="formStatus"
-                                class="form-status"
-                                aria-live="polite"
-                            ></span>
-
-                        </div>
-
-                    </form>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==================================================
              ABOUT + OWNER PROFILE
-             Moved near the end
         =================================================== -->
 
         <section
@@ -1044,7 +953,7 @@
                 <div class="section-heading reveal">
 
                     <span class="section-label">
-                        07 / ABOUT
+                        06 / ABOUT
                     </span>
 
 
@@ -1259,6 +1168,117 @@
             </div>
 
         </section>
+
+
+        <!-- ==================================================
+             SUGGESTIONS / FEEDBACK
+        =================================================== -->
+
+        <section
+            id="suggestions"
+            class="section"
+        >
+
+            <div class="container">
+
+                <article class="suggestion-card reveal">
+
+                    <div class="suggestion-content">
+
+                        <span class="section-label">
+                            07 / FEEDBACK
+                        </span>
+
+
+                        <h2>
+                            Have an idea
+                            <span>for OPSSTAQ?</span>
+                        </h2>
+
+
+                        <p>
+                            Have an idea, noticed something, or want to
+                            see something added? Drop a quick suggestion —
+                            your feedback helps shape OPSSTAQ.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        id="suggestionForm"
+                        class="suggestion-form"
+                    >
+
+                        <div class="form-row">
+
+                            <label>
+                                Name
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    required
+                                    autocomplete="name"
+                                    placeholder="Your name"
+                                >
+                            </label>
+
+
+                            <label>
+                                Email
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    required
+                                    autocomplete="email"
+                                    placeholder="you@example.com"
+                                >
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Suggestion
+
+                            <textarea
+                                name="suggestion"
+                                rows="5"
+                                required
+                                placeholder="Tell us what you'd like to see..."
+                            ></textarea>
+                        </label>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="suggestion-submit"
+                            >
+                                Submit Suggestion →
+                            </button>
+
+
+                            <span
+                                id="formStatus"
+                                class="form-status"
+                                aria-live="polite"
+                            ></span>
+
+                        </div>
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
 
 
         <!-- ==================================================

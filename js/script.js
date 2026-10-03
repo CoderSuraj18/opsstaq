@@ -552,3 +552,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* ==================================================
+   WELCOME MESSAGE — AUTO DISMISS
+   ================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const welcomeMessage = document.getElementById("welcomeMessage");
+
+    if (!welcomeMessage) {
+        return;
+    }
+
+    setTimeout(() => {
+        welcomeMessage.classList.add("is-hidden");
+
+        setTimeout(() => {
+            welcomeMessage.remove();
+        }, 500);
+
+    }, 5000);
+});
